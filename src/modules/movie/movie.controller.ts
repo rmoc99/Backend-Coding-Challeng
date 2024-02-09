@@ -9,7 +9,11 @@ export class MovieController {
 
   @Get()
   async findAllMovies(): Promise<Movie[]> {
-    return this.movieService.listAllMovies();
+    try {
+      return this.movieService.listAllMovies();
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   } 
   
   @Post()
@@ -17,22 +21,34 @@ export class MovieController {
     try {
       return this.movieService.createMovie(movie);
     } catch (error) {
-      throw new HttpException(error.message,HttpStatus.INTERNAL_SERVER_ERROR)
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
     }
   }
-  
+
   @Put(':id')
   async update(@Param('id') id: number, @Body() updateMovie: UpdateMovie): Promise<Movie> {
-    return this.movieService.update(id, updateMovie);
+    try {
+      return this.movieService.update(id, updateMovie);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   }
 
   @Delete(':id')
-  async remove(@Param('id') id: number): Promise<Movie> {
-    return this.movieService.delete(id);
+  async remove(@Param('id') id: number): Promise<void> {
+    try {
+      return this.movieService.delete(id);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   }
 
   @Get(':name')
   async searchMovie(@Param('name') searchString: string): Promise<Movie[]> {
-    return this.movieService.searchMovie(searchString);
+    try {
+      return this.movieService.searchMovie(searchString);
+    } catch (error) {
+      throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
+    }
   } 
 }

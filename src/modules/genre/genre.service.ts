@@ -1,15 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { Database } from '../../database/database.service';
+import {Genre} from './genre.model'
+
 
 @Injectable()
 export class GenreService {
   constructor(private readonly dbService: Database) {}
 
-    async createGenre(name: String): Promise<String> {
+    async createGenre(genre: Genre): Promise<Genre> {
       try {
-        const query = `INSERT INTO genre VALUES ($1)`;
-        await this.dbService.query(query, [name]);
-        return name;
+        const query = `INSERT INTO genre VALUES ($1) RETURNING *`;
+        const result = await this.dbService.query(query, [genre.name]);
+        return result.rows[0] as Genre;
       } catch (error) {
         console.error('Error creating genre:', error);
         throw new Error('Failed to create genre');
@@ -33,8 +35,9 @@ export class GenreService {
           const query = `DELETE FROM genre Where name = $1`;
           const result = await this.dbService.query(query,[name]);
           if (result.rowCount === 0) throw new Error('No genre with that name'); 
+          const queryForMovie = `UPDATE movie SET genre = array_remove(genre, $1)`
+            await this.dbService.query(queryForMovie,[name]);
           return `${name} was deleted successfully`;
-          
         } catch (error) {
           console.error('Error deleting genre:', error);
           throw new Error('Failed to delete genre');

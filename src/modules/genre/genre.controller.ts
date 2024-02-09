@@ -13,9 +13,9 @@ export class GenreController {
     } 
 
     @Post()
-    async createGenre(@Body() genre: Genre ): Promise<String> {
+    async createGenre(@Body() genre: Genre ): Promise<Genre> {
         try {
-            return this.genreService.createGenre(genre.name);
+            return this.genreService.createGenre(genre);
         } catch (error) {
             throw new HttpException(error.message, HttpStatus.INTERNAL_SERVER_ERROR)
         }
