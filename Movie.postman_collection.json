@@ -67,7 +67,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"title\": \"'New Movie'\",\n  \"releasedate\": \"1999-01-01\"\n}",
+					"raw": "{\n  \"title\": \"'New Movie Name'\",\n  \"releasedate\": \"1999-01-01\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -101,7 +101,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/movie/21",
+					"raw": "http://localhost:3000/movie/20",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +109,7 @@
 					"port": "3000",
 					"path": [
 						"movie",
-						"21"
+						"20"
 					]
 				}
 			},
@@ -119,7 +119,19 @@
 			"name": "Search movie by String",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/movie/Action",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"movie",
+						"Action"
+					]
+				}
 			},
 			"response": []
 		},
@@ -148,7 +160,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/genre/anyName",
+					"raw": "http://localhost:3000/genre/Cool",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -156,7 +168,7 @@
 					"port": "3000",
 					"path": [
 						"genre",
-						"anyName"
+						"Cool"
 					]
 				}
 			},
@@ -169,7 +181,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\": \"2\"\n}",
+					"raw": "{\n  \"name\": \"Cool\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
