@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "8ea6ff5f-1ac9-4edc-a620-129be922bebe",
+		"_postman_id": "ed68b4e5-9e38-44de-a062-c2039df67b32",
 		"name": "Movie",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18484092",
-		"_collection_link": "https://planetary-firefly-561352.postman.co/workspace/Movies_Api~04e42440-c625-4f24-881f-866b44d37cc5/collection/18484092-8ea6ff5f-1ac9-4edc-a620-129be922bebe?action=share&source=collection_link&creator=18484092"
+		"_collection_link": "https://planetary-firefly-561352.postman.co/workspace/Movies_Api~04e42440-c625-4f24-881f-866b44d37cc5/collection/18484092-ed68b4e5-9e38-44de-a062-c2039df67b32?action=share&source=collection_link&creator=18484092"
 	},
 	"item": [
 		{
@@ -75,7 +75,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/movie/20",
+					"raw": "http://localhost:3000/movie/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -83,7 +83,7 @@
 					"port": "3000",
 					"path": [
 						"movie",
-						"20"
+						"10"
 					]
 				}
 			},
@@ -101,7 +101,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:3000/movie/20",
+					"raw": "http://localhost:3000/movie/10",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -109,7 +109,7 @@
 					"port": "3000",
 					"path": [
 						"movie",
-						"20"
+						"10"
 					]
 				}
 			},
