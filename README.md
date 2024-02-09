@@ -5,32 +5,42 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Backend Coding Challenge: NestJS Movie API
+In this challenge, you are to create a Movie REST API using NestJS, a typescript framework for building efficient and scalable Node.js applications. You will be implementing CRUD operations for movies and related genres.
+
+● ListMovies: List all movies in the database
+● AddMovie: Add a movie to the database with the atributes 
+  ○ Title(String,required)
+  ○ Description(String,required)
+  ○ Releasedate(Date,required)
+  ○ Genre(ArrayofString,required)
+● UpdateMovie: Update the details of a movie, the endpoints accepts any number of attributes, such as you can change only the description or multiple atributes at the same time
+● DeleteMovie: Delete movie from the database by id
+● ListGenres: list all genres 
+● AddGenre: Add a new genre with the atribute
+  ○ Name(String,required)
+● DeleteGenre: Delete a genre from the database and alter the movies that have the deleted genre
+● SearchMovies: search movies by title or genre. 
+
+Details: 
+- Movie database has and id, assuming that you can have two movies with the same name
+- The database used is from Amazon Web Services (AWS), in the .env file you can see the database details such as the endpoint. Although its not secure to store this information publicaly, it was used to simplify the access
+
 
 ## Installation
 
 ```bash
+$ git clone https://github.com/rmoc99/Backend-Coding-Challenge.git
+
 $ npm install
 ```
+
+Open Postman and import file Movie.postman_collection.json located on the root directory.
+
+Since this is local Api you need to install Postman Desktop Agent
 
 ## Running the app
 
@@ -44,30 +54,5 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+To test the application use the Postman Endpoints.
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
